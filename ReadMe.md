@@ -4,7 +4,7 @@
 MediaManager is a plugin for the ExtJS 4 htmleditor field who provides an easy way to insert and edit images.
 Also it adds ability to manage folder and files on the server (insertion, uploading, deleting).
 ## Compatibility
-Competibale with ExtJs 4.x
+Compatible with ExtJs 4.x
 ##Installation
 - put the folder with source code (mediamanager) into /ux/form/;
 - add stylesheet MediaManager.css file into index.html;
