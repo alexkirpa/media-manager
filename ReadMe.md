@@ -7,7 +7,6 @@ Also it adds ability to manage folder and files on the server (insertion, upload
 Competibale with ExtJs 4.x
 ##Installation
 - put the folder with source code (mediamanager) into /ux/form/;
-- поместить каталог с исходным кодом плагина (mediamanager) в /ux/form/;
 - add stylesheet MediaManager.css file into index.html;
 
 ##Example
