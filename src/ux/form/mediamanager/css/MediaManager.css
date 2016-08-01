@@ -1,0 +1,110 @@
+.icon-image {
+    background-image: url(../images/icon-image.png);
+}
+.icon-media {
+    background-image: url(../images/icon-media.png);
+}
+.icon-upload{
+    background-image: url(../images/icon-add.png);
+}
+.icon-folder-add{
+    background-image: url(../images/icon-folder-add.png);
+}
+.icon-folder-delete{
+    background-image: url(../images/icon-folder-delete.png);
+}
+.icon-zoom{
+    background-image: url(../images/icon-zoom.png);
+}
+.icon-folder-go{
+    background-image: url('../images/icon-folder-go.png');
+}
+.icon-folder-image{
+    background: url('../images/icon-folder-image.png') no-repeat;
+}
+.icon-accept {
+    background: url('../images/accept.png') no-repeat;
+}
+.icon-delete {
+    background: url('../images/delete.png') no-repeat;
+}
+
+
+/* Image View */
+
+.media-dialog-view .x-panel-body{
+    background: white;
+    font: 11px Arial, Helvetica, sans-serif;
+}
+.media-dialog-view .thumb{
+    background: #dddddd;
+    padding: 3px;
+    padding-bottom: 0;
+}
+
+.x-quirks .media-dialog-view .thumb {
+    padding-bottom: 3px;
+}
+
+.media-dialog-view .thumb img{
+    height: 60px;
+    width: 80px;
+}
+.media-dialog-view .thumb-wrap{
+    float: left;
+    margin: 4px;
+    margin-right: 0;
+    padding: 5px;
+}
+.media-dialog-view .thumb-wrap span {
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    width: 86px; /* for ie to ensure that the text is centered */
+}
+
+.media-dialog-view .x-item-over{
+    border:1px solid #dddddd;
+    background: #efefef url(../images/over.gif) repeat-x left top;
+    padding: 4px;
+}
+
+.media-dialog-view .x-item-selected{
+    background: #eff5fb url(../images/selected.gif) no-repeat right bottom;
+    border:1px solid #99bbe8;
+    padding: 4px;
+}
+.media-dialog-view .x-item-selected .thumb{
+    background:transparent;
+}
+
+.media-dialog-view .loading-indicator {
+    font-size:11px;
+    background-image:url('../images/loading.gif');
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left:20px;
+    margin:10px;
+}
+
+.x-view-selector {
+    position:absolute;
+    left:0;
+    top:0;
+    width:0;
+    border:1px dotted;
+    opacity: .5;
+    -moz-opacity: .5;
+    filter:alpha(opacity=50);
+    zoom:1;
+    background-color:#c3daf9;
+    border-color:#3399bb;
+}
+.ext-strict .ext-ie .x-tree .x-panel-bwrap{
+     position:relative;
+     overflow:hidden;
+ }
+
+.media-dialog .x-tree-icon-leaf {
+    background-image: url(../images/folder.gif);
+}

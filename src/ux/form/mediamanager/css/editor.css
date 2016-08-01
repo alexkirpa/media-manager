@@ -1,0 +1,27 @@
+img.html_editor_image{
+    margin: 3px;
+}
+img.html_editor_image:hover{
+    border: 1px solid #c0c0c0;
+    padding: 2px;
+    cursor: pointer;
+    margin: 0px;
+}
+img.html_editor_image.selected{
+    border: 1px solid #397aff;
+    padding: 2px;
+    cursor: pointer;
+    margin: 0px;
+    background-color: rgba(82, 169, 255, 0.34);
+}
+img.html_editor_image.left{
+    float: left;
+}
+img.html_editor_image.center{
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+img.html_editor_image.right{
+    float: right;
+}
