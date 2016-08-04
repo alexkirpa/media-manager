@@ -46,6 +46,11 @@ Ext.define('Ext.ux.form.mediamanager.MediaManager', {
      */
     baseCls: 'html_editor_image',
     /**
+     * @cfg {String} selectedCls
+     * The CSS class to be added to makr the image as selected.
+     */
+    selectedCls: 'selected',
+    /**
      * @cfg {Object} buttonTips
      * The tooltips for the buttons that will be added to the htmleditor.
      */
@@ -141,7 +146,7 @@ Ext.define('Ext.ux.form.mediamanager.MediaManager', {
         Ext.override(editor,{
             /**
              * @protected
-             * baseCls and `selected` are used only in editor.
+             * baseCls and selectedCls are used only in editor.
              * We have to delete these classes before sending content into the textarea.
              * The `syncValue` method is the best place to do this.
              */
@@ -152,10 +157,10 @@ Ext.define('Ext.ux.form.mediamanager.MediaManager', {
                     img, images,
                     select = Ext.DomQuery.select;
 
-                img = select('img.selected', doc)[0];
+                img = select('img.' + plugin.selectedCls, doc)[0];
                 images = select('img', doc);
                 Ext.each(images, function(item) {
-                    Ext.fly(item).removeCls([plugin.baseCls, 'selected']);
+                    Ext.fly(item).removeCls([plugin.baseCls, plugin.selectedCls]);
                 });
 
                 me.callParent(arguments);
@@ -163,9 +168,9 @@ Ext.define('Ext.ux.form.mediamanager.MediaManager', {
                 Ext.each(images, function(item) {
                     Ext.fly(item).addCls(plugin.baseCls);
                 });
-                // if the image was selected - add `selected` class
+                // if the image was selected - add selectedCls class
                 if (img) {
-                    Ext.fly(img).addCls('selected');
+                    Ext.fly(img).addCls(plugin.selectedCls);
                 }
             }
         });
@@ -223,11 +228,11 @@ Ext.define('Ext.ux.form.mediamanager.MediaManager', {
         var me = this,
             type = event.type,
             doc = me.editor.getDoc(),
-            selectedEl = Ext.DomQuery.select('img.selected', doc)[0];
+            selectedEl = Ext.DomQuery.select('img.' + me.selectedCls, doc)[0];
 
         // at first clear the selection
         if (selectedEl) {
-            Ext.fly(selectedEl).removeCls('selected');
+            Ext.fly(selectedEl).removeCls(me.selectedCls);
         }
 
         if (type === 'keyup' || target.tagName.toLowerCase() !== 'img') {
@@ -235,7 +240,7 @@ Ext.define('Ext.ux.form.mediamanager.MediaManager', {
         }
 
         // select new image
-        Ext.fly(target).addCls('selected');
+        Ext.fly(target).addCls(me.selectedCls);
 
         if (type === 'dblclick') {
             me.showImageDialog();
@@ -280,7 +285,7 @@ Ext.define('Ext.ux.form.mediamanager.MediaManager', {
     onSave: function(config) {
         var me = this,
             doc = me.editor.getDoc(),
-            img = Ext.DomQuery.select('img.selected', doc)[0];
+            img = Ext.DomQuery.select('img.' + me.selectedCls, doc)[0];
 
         if (!img){
             me.insertImage(config);
@@ -372,7 +377,7 @@ Ext.define('Ext.ux.form.mediamanager.MediaManager', {
         var me = this,
             doc = me.editor.getDoc(),
             dialog = me.getImageDialog(),
-            cfg = me.getImageProperties(Ext.DomQuery.select('img.selected', doc)[0]);
+            cfg = me.getImageProperties(Ext.DomQuery.select('img.' + me.selectedCls, doc)[0]);
 
         dialog.show(cfg);
     },

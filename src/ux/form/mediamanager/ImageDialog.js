@@ -8,7 +8,10 @@
  */
 Ext.define('Ext.ux.form.mediamanager.ImageDialog', {
     extend: 'Ext.window.Window',
-    xtype: 'imagedialog',
+	requires: [
+        'Ext.form.field.Number',
+        'Ext.form.field.ComboBox'
+    ],
     closeAction: 'hide',
     title: 'Image properties',
     modal: true,
@@ -266,13 +269,9 @@ Ext.define('Ext.ux.form.mediamanager.ImageDialog', {
         var me = this,
             form = me.getForm();
 
-        console.profile("processPixels()");
-
         form.updateRecord();
         me.fireEventArgs('save', [form.getRecord()]);
         me.close();
-
-        console.profileEnd();
     },
     getImage: function() {
         return this.down('image');

@@ -9,7 +9,13 @@
  */
 Ext.define('Ext.ux.form.mediamanager.MediaDialog', {
     extend: 'Ext.window.Window',
-    xtype: 'mediadialog',
+    requires: [
+        'Ext.data.TreeStore',
+        'Ext.layout.container.Border',
+        'Ext.tree.Panel',
+        'Ext.form.field.FileButton',
+        'Ext.form.field.File'
+    ],
     title: 'Media manager',
     closeAction: 'hide',
     modal: true,
